@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="mvvm_button" type="id">mvvm</item>
+    <item name="mvp_button" type="id">mvp</item>
+    <item name="home_container" type="id">homecontainer</item>
+</resources>

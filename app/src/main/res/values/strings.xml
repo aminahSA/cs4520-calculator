@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">assignment3</string>
+    <string name="mvp_button_label">MVP</string>
+    <string name="mvvm_button_label">MVVM</string>
+    <string name="title_activity_main">Calculator</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mvp_button_text">MVP</string>
+    <string name="mvvm_button_text">MVVM</string>
+    <string name="first_number">first number</string>
+    <string name="second_number">second number</string>
+    <string name="result">result</string>
 </resources>

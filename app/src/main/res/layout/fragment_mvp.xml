@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C4B8E1"
+    android:backgroundTint="#C4B8E1"
+    android:orientation="vertical"
+    tools:context=".MVPFragment">
+
+    <!-- MVP Calculator label-->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:background="#A250D6"
+        android:text="MVP Calculator"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="34sp" />
+
+    <!-- Organizes number entry buttons horizontally-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/first_number"
+            android:inputType="number"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <EditText
+            android:id="@+id/editTextNumber2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/second_number"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <!-- Holds math operation buttons-->
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal">
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <!-- Add -->
+            <ImageButton
+                android:id="@+id/add_button"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:contentDescription="addition"
+                android:scaleType="centerCrop"
+                android:src="@drawable/add_symbol"
+                android:text="add"
+                tools:layout_margin="10dp" />
+
+            <!-- Subtract-->
+            <ImageButton
+                android:id="@+id/sub_button"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:contentDescription="subtraction"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sub_symbol"
+                android:text="subtract"
+                tools:layout_margin="10dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <!-- Multiply -->
+            <ImageButton
+                android:id="@+id/mult_button"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:contentDescription="multiplication"
+                android:scaleType="centerCrop"
+                android:src="@drawable/mul_symbol"
+                android:text="multiply"
+                tools:layout_margin="10dp" />
+
+            <!-- Divide -->
+            <ImageButton
+                android:id="@+id/div_button"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:contentDescription="division"
+                android:scaleType="centerCrop"
+                android:src="@drawable/div_symbol"
+                android:text="divide"
+                tools:layout_margin="10dp" />
+        </TableRow>
+    </TableLayout>
+
+    <!-- Organizes result label and number horizontally-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:background="#009688"
+            android:padding="10dp"
+            android:text="@string/result"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="number appears here"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+
+</LinearLayout>

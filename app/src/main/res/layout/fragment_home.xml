@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/home_fragment"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,13 +12,15 @@
     android:paddingRight="16dp">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/mvp_button"
+        android:clickable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/mvp_button_label" />
+        android:text="@string/mvp_button_label"
+        android:focusable="true" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/mvvm_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/mvvm_button_text" />

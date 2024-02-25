@@ -22,11 +22,18 @@
         android:name="com.cs4520.assignment3.mvp.MVPFragment"
         tools:layout="@layout/fragment_mvp"
         android:label="MVPFragment">
+        <action
+            android:id="@+id/action_mvp_fragment_to_home_Fragment"
+            app:destination="@id/home_Fragment" />
     </fragment>
     <fragment
         android:id="@+id/mvvmFragment"
         android:name="com.cs4520.assignment3.MVVMFragment"
-        android:label="mvvmFragment" />
+        android:label="mvvmFragment" >
+        <action
+            android:id="@+id/action_mvvmFragment_to_home_Fragment"
+            app:destination="@id/home_Fragment" />
+    </fragment>
 </navigation>
 
 

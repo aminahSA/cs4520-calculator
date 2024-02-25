@@ -11,6 +11,7 @@ class MVPModel: MVPContract.Model {
             "multiplication" -> return (num1 * num2).toDouble()
             "division" -> return (num1 / num2).toDouble()
         }
-        throw IllegalArgumentException("invalid operation.")
+        return 0.0
+    //throw IllegalArgumentException("invalid operation.")
     }
 }

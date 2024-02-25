@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/mvp_fragment"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -70,6 +69,7 @@
                 android:id="@+id/add_button"
                 android:layout_width="100dp"
                 android:layout_height="70dp"
+                android:backgroundTint="#4C0042"
                 android:contentDescription="addition"
                 android:scaleType="centerCrop"
                 android:src="@drawable/add_symbol"
@@ -81,6 +81,7 @@
                 android:id="@+id/sub_button"
                 android:layout_width="100dp"
                 android:layout_height="70dp"
+                android:backgroundTint="#00233E"
                 android:contentDescription="subtraction"
                 android:scaleType="centerCrop"
                 android:src="@drawable/sub_symbol"
@@ -98,6 +99,7 @@
                 android:id="@+id/mult_button"
                 android:layout_width="100dp"
                 android:layout_height="70dp"
+                android:backgroundTint="#04451C"
                 android:contentDescription="multiplication"
                 android:scaleType="centerCrop"
                 android:src="@drawable/mul_symbol"
@@ -109,6 +111,7 @@
                 android:id="@+id/div_button"
                 android:layout_width="100dp"
                 android:layout_height="70dp"
+                android:backgroundTint="#C81515"
                 android:contentDescription="division"
                 android:scaleType="centerCrop"
                 android:src="@drawable/div_symbol"
@@ -134,10 +137,12 @@
             android:textSize="30sp" />
 
         <TextView
+            android:id="@+id/the_result"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="number appears here"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="#000000" />
     </LinearLayout>
 
 

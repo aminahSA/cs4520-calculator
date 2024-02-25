@@ -11,12 +11,17 @@ class MVPPresenter(private val view: MVPFragment, private val model : MVPModel):
         val num2 = input2.toIntOrNull()
 
         // Input is a valid number
-        if (num1 != null && num2 != null && num2!= 0) {
-            // Send numbers to model to calculate the result
-           val result = model.calculateResult(num1, num2, operation)
-            view.displayResult(result)
+        if (num1 != null && num2 != null) {
+            if (!(num2 == 0 && operation == "division")) {
+                // Send numbers to model to calculate the result
+                val result = model.calculateResult(num1, num2, operation)
+                view.displayResult(result)
+            } else {
+                //Input is not a valid number
+                view.showInvalidInputError()
+            }
         } else {
-            // Input is not a valid number
+             //Input is not a valid number
             view.showInvalidInputError()
         }
     }
@@ -24,6 +29,6 @@ class MVPPresenter(private val view: MVPFragment, private val model : MVPModel):
     // accept valid result from model and give to view
     override fun giveResult() {
 
-    }
+   }
 
 }

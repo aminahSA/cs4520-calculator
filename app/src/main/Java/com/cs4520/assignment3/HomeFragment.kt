@@ -26,6 +26,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navToMvp()
+        navToMvvm()
     }
 
 private fun navToMvp () {
@@ -33,4 +34,10 @@ private fun navToMvp () {
         findNavController().navigate(R.id.action_homeFragment_to_mvpFragment)
     }
 }
+
+    private fun navToMvvm () {
+        view?.findViewById<Button>(R.id.mvvm_button)?.setOnClickListener {
+            findNavController().navigate(R.id.action_home_Fragment_to_MVVMFragment)
+        }
+    }
 }

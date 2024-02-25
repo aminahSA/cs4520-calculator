@@ -12,14 +12,21 @@
         android:label="HomeFragment">
         <action android:id="@+id/action_homeFragment_to_mvpFragment"
             app:destination="@id/mvp_fragment" />
+        <action
+            android:id="@+id/action_home_Fragment_to_MVVMFragment"
+            app:destination="@id/mvvmFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/mvp_fragment"
-        android:name="com.cs4520.assignment3.MVPFragment"
+        android:name="com.cs4520.assignment3.mvp.MVPFragment"
         tools:layout="@layout/fragment_mvp"
         android:label="MVPFragment">
     </fragment>
+    <fragment
+        android:id="@+id/mvvmFragment"
+        android:name="com.cs4520.assignment3.MVVMFragment"
+        android:label="mvvmFragment" />
 </navigation>
 
 

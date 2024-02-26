@@ -9,7 +9,7 @@ class MVPModel: MVPContract.Model {
             "addition" -> return (num1 + num2).toDouble()
             "subtraction" -> return (num1 - num2).toDouble()
             "multiplication" -> return (num1 * num2).toDouble()
-            "division" -> return (num1 / num2).toDouble()
+            "division" -> return (num1.toDouble() / num2.toDouble())
         }
         return 0.0
     //throw IllegalArgumentException("invalid operation.")

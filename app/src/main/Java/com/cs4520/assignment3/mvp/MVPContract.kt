@@ -20,9 +20,7 @@ interface MVPContract {
     interface Presenter {
 
         //accept input from the view
-            // if valid input, pass to the model
-            // if invalid input (1 or 0 numbers; letters), tell view to display error message
-        fun acceptInput(input1: String, input2: String, operation: String);
+        fun acceptInput(input1: String, input2: String, operation: String)
 
         // accept valid result from model and give to view
         fun giveResult()

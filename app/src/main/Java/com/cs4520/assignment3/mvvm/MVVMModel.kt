@@ -9,11 +9,9 @@ class MVVMModel {
             "subtraction" -> return (num1 - num2).toDouble()
             "multiplication" -> return (num1 * num2).toDouble()
             "division" -> if (num2 == 0) {
-                //do nothing (yet)
-            } else { return (num1.toDouble() / num2.toDouble())}
+                throw IllegalArgumentException("cannot divide by zero.")            }
+            else { return (num1.toDouble() / num2.toDouble())}
         }
         throw IllegalArgumentException("invalid operation.")
     }
-
-
 }

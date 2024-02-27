@@ -3,8 +3,6 @@ package com.cs4520.assignment3.mvp
 class MVPPresenter(private val view: MVPFragment, private val model : MVPModel): MVPContract.Presenter {
 
     //accept input from the view
-    // if valid input, pass to the model
-    // if invalid input (1 or 0 numbers; letters), tell view to display error message //do not allow 0 divisor
     override fun acceptInput(input1: String, input2: String, operation: String) {
 
         val num1 = input1.toIntOrNull()

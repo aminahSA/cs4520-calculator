@@ -18,4 +18,13 @@
     <string name="first_number">first number</string>
     <string name="second_number">second number</string>
     <string name="result">result</string>
+    <string name="mvvm_calculator_label">MVVM Calculator</string>
+    <string name="addition">addition</string>
+    <string name="add">add</string>
+    <string name="subtraction">subtraction</string>
+    <string name="subtract">subtract</string>
+    <string name="multiplication">multiplication</string>
+    <string name="multiply">multiply</string>
+    <string name="division">division</string>
+    <string name="divide">divide</string>
 </resources>

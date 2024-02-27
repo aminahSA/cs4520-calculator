@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.cs4520.assignment3.R
 import com.cs4520.assignment3.databinding.FragmentMvvmBinding
@@ -18,10 +18,6 @@ import com.cs4520.assignment3.databinding.FragmentMvvmBinding
 class MVVMFragment: Fragment() {
 
     private lateinit var myMVVMViewModel: MVVMViewModel
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,6 +43,7 @@ class MVVMFragment: Fragment() {
             view.findViewById<TextView>(R.id.the_result).text = result.toString()
         }
 
+        //observe both editText fields
         myMVVMViewModel.userInput1.observe(viewLifecycleOwner) { userInput1 ->
                 view.findViewById<EditText>(R.id.editTextNumber).setText(userInput1)
         }
@@ -55,7 +52,13 @@ class MVVMFragment: Fragment() {
             view.findViewById<EditText>(R.id.editTextNumber2).setText(userInput2)
         }
 
+        // Observe the message LiveData
+        myMVVMViewModel.message.observe(viewLifecycleOwner) { message ->
+            // Show the toast whenever the message changes
+            showToast(message)
+        }
 
+        //listen for operation buttons clicked
         view.findViewById<ImageButton>(R.id.add_button)?.setOnClickListener {
             // Get the text from the EditText views
             val editTextNumber1 = view.findViewById<EditText>(R.id.editTextNumber)
@@ -64,8 +67,8 @@ class MVVMFragment: Fragment() {
             val input2Text = editTextNumber2.text.toString()
 
             // Convert the text to integers
-            val input1 = input1Text.toIntOrNull() ?: 0
-            val input2 = input2Text.toIntOrNull() ?: 0
+            val input1 = input1Text.toIntOrNull()
+            val input2 = input2Text.toIntOrNull()
             myMVVMViewModel.add(input1, input2, "addition")
         }
 
@@ -77,8 +80,8 @@ class MVVMFragment: Fragment() {
             val input2Text = editTextNumber2.text.toString()
 
             // Convert the text to integers
-            val input1 = input1Text.toIntOrNull() ?: 0
-            val input2 = input2Text.toIntOrNull() ?: 0
+            val input1 = input1Text.toIntOrNull()
+            val input2 = input2Text.toIntOrNull()
             myMVVMViewModel.subtract(input1, input2, "subtraction")
         }
 
@@ -90,8 +93,8 @@ class MVVMFragment: Fragment() {
             val input2Text = editTextNumber2.text.toString()
 
             // Convert the text to integers
-            val input1 = input1Text.toIntOrNull() ?: 0
-            val input2 = input2Text.toIntOrNull() ?: 0
+            val input1 = input1Text.toIntOrNull()
+            val input2 = input2Text.toIntOrNull()
             myMVVMViewModel.multiply(input1, input2, "multiplication")
         }
 
@@ -103,13 +106,14 @@ class MVVMFragment: Fragment() {
             val input2Text = editTextNumber2.text.toString()
 
             // Convert the text to integers
-            val input1 = input1Text.toIntOrNull() ?: 0
-            val input2 = input2Text.toIntOrNull() ?: 0
+            val input1 = input1Text.toIntOrNull()
+            val input2 = input2Text.toIntOrNull()
             myMVVMViewModel.divide(input1, input2, "division")
         }
     }
 
-    fun showToast(message: String) {
-
+    //show a toast message
+    private fun showToast(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 }

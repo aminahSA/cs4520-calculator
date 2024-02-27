@@ -9,28 +9,33 @@
             type="com.cs4520.assignment3.mvvm.MVVMViewModel" />
     </data>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarThumbVertical="@color/purple_700">
+
 <LinearLayout
     android:id="@+id/mvvm_fragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background= "#ffb3ba"
     android:orientation="vertical"
     tools:context=".mvvm.MVVMFragment">
 
     <!-- MVVM Calculator label-->
-    <TextView
+    <TextView android:layout_weight="1"
         android:id="@+id/mvvmCalcLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
         android:background="#A250D6"
-        android:text="MVVM Calculator"
+        android:text="@string/mvvm_calculator_label"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="34sp" />
 
     <!-- Organizes number entry buttons horizontally-->
-    <LinearLayout
+    <LinearLayout android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -41,7 +46,6 @@
             android:id="@+id/editTextNumber"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_weight="1"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/first_number"
@@ -53,7 +57,6 @@
             android:id="@+id/editTextNumber2"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_weight="1"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/second_number"
@@ -62,7 +65,7 @@
     </LinearLayout>
 
     <!-- Holds math operation buttons-->
-    <TableLayout
+    <TableLayout android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -80,10 +83,10 @@
                 android:layout_width="100dp"
                 android:layout_height="70dp"
                 android:backgroundTint="#37092F"
-                android:contentDescription="addition"
+                android:contentDescription="@string/addition"
                 android:scaleType="centerCrop"
                 android:src="@drawable/add_symbol"
-                android:text="add"
+                android:text="@string/add"
                 tools:layout_margin="10dp" />
 
             <!-- Subtract-->
@@ -92,10 +95,10 @@
                 android:layout_width="100dp"
                 android:layout_height="70dp"
                 android:backgroundTint="#1E0063"
-                android:contentDescription="subtraction"
+                android:contentDescription="@string/subtraction"
                 android:scaleType="centerCrop"
                 android:src="@drawable/sub_symbol"
-                android:text="subtract"
+                android:text="@string/subtract"
                 tools:layout_margin="10dp" />
         </TableRow>
 
@@ -110,10 +113,10 @@
                 android:layout_width="100dp"
                 android:layout_height="70dp"
                 android:backgroundTint="#005C05"
-                android:contentDescription="multiplication"
+                android:contentDescription="@string/multiplication"
                 android:scaleType="centerCrop"
                 android:src="@drawable/mul_symbol"
-                android:text="multiply"
+                android:text="@string/multiply"
                 tools:layout_margin="10dp" />
 
             <!-- Divide -->
@@ -122,16 +125,16 @@
                 android:layout_width="100dp"
                 android:layout_height="70dp"
                 android:backgroundTint="#811A00"
-                android:contentDescription="division"
+                android:contentDescription="@string/division"
                 android:scaleType="centerCrop"
                 android:src="@drawable/div_symbol"
-                android:text="divide"
+                android:text="@string/divide"
                 tools:layout_margin="10dp" />
         </TableRow>
     </TableLayout>
 
     <!-- Organizes result label and number horizontally-->
-    <LinearLayout
+    <LinearLayout android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -153,4 +156,5 @@
             android:textAlignment="center" />
     </LinearLayout>
 </LinearLayout>
+    </ScrollView>
 </layout>

@@ -13,8 +13,6 @@ import android.widget.TextView
 import android.widget.Toast
 import com.cs4520.assignment3.R
 
-// TODO: clear inputs after clicking any operation
-
 class MVPFragment : Fragment(), MVPContract.View{
 
     private lateinit var presenter: MVPContract.Presenter

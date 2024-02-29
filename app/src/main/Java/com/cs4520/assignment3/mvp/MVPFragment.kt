@@ -74,18 +74,27 @@ class MVPFragment : Fragment(), MVPContract.View{
    override fun notifyOperationClicked() {
         view?.findViewById<ImageButton>(R.id.add_button)?.setOnClickListener {
             presenter.acceptInput(userInput1, userInput2, "addition")
+            clearInputs()
         }
         view?.findViewById<ImageButton>(R.id.sub_button)?.setOnClickListener {
             presenter.acceptInput(userInput1, userInput2, "subtraction")
+            clearInputs()
         }
         view?.findViewById<ImageButton>(R.id.mult_button)?.setOnClickListener {
             presenter.acceptInput(userInput1, userInput2, "multiplication")
+            clearInputs()
         }
         view?.findViewById<ImageButton>(R.id.div_button)?.setOnClickListener {
             presenter.acceptInput(userInput1, userInput2, "division")
+            clearInputs()
         }
   }
 
+    //clear inputs
+    private fun clearInputs() {
+        field1.setText("")
+        field2.setText("")
+    }
 
     // display a toast message if inputs are invalid according to info from presenter
   override fun showInvalidInputError() {

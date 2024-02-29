@@ -29,8 +29,10 @@ class MVVMViewModel: ViewModel() {
     fun add(num1: Int?, num2: Int?, op: String) {
         if (num1 !is Int || num2 !is Int) {
             updateMessage("invalid input.")
+            clearInputs()
         } else {
             _result.value = model.calculateResult(num1, num2, op)
+            clearInputs()
         }
     }
 
@@ -38,8 +40,10 @@ class MVVMViewModel: ViewModel() {
     fun subtract(num1: Int?, num2: Int?, op: String) {
         if (num1 !is Int || num2 !is Int) {
             updateMessage("invalid input.")
+            clearInputs()
         } else {
             _result.value = model.calculateResult(num1, num2, op)
+            clearInputs()
         }
     }
 
@@ -47,18 +51,22 @@ class MVVMViewModel: ViewModel() {
     fun multiply(num1: Int?, num2: Int?, op: String) {
         if (num1 !is Int || num2 !is Int) {
             updateMessage("invalid input.")
+            clearInputs()
         } else {
             _result.value = model.calculateResult(num1, num2, op)
+            clearInputs()
         }    }
 
     // Perform division and update the result LiveData
     fun divide(num1: Int?, num2: Int?, op: String) {
         if (num1 !is Int || num2 !is Int) {
             updateMessage("invalid input.")
+            clearInputs()
         } else {
             try {_result.value = model.calculateResult(num1, num2, op)
-            } catch (e: Exception) {
-                e.message?.let { updateMessage(it) }
+                clearInputs()} catch (e: Exception) {
+                e.message?.let { updateMessage(it)
+                    clearInputs()}
             }
         }
     }
@@ -66,6 +74,12 @@ class MVVMViewModel: ViewModel() {
     // Function to update the error message
     private fun updateMessage(newMessage: String) {
         _message.value = newMessage
+    }
+
+    //clear inputs
+    private fun clearInputs() {
+        _userInput1.value = ""
+        _userInput2.value = ""
     }
 
 }
